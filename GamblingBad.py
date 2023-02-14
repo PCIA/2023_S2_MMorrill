@@ -1,7 +1,7 @@
 import time
 import random
-playermoney = 0
 userplay = "yes"
+playermoney = 0
 print("'Hey Kids! Today we'll be learning about why gambling is bad.'")
 time.sleep(1.25)
 answer = input("Are you ready? [Yes or No] ")
@@ -31,5 +31,5 @@ while userplay == "yes":
     time.sleep(1.25)
     print("You now have", playermoney,"Gold Coins")
     playagain = input ("Would you like to play again? [Yes or No]").upper()
-if playagain == "YES": userplay = "yes"
-if playagain == "NO": userplay = "no", print("see you soon!")
+    if playagain == "YES": userplay = "yes"
+    if playagain == "NO": userplay = "no", print("see you soon!")
