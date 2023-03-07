@@ -3,7 +3,6 @@ wordDictionary = ["house","car","sun","fan","bookshelf","gemstone"]
 wordChoice = random.choice(wordDictionary)
 userWrong = 0
 display = "_" * len(wordChoice)
-
 if userWrong == 0:
     print("+----|")
     print("     |")

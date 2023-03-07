@@ -26,7 +26,7 @@ if computer_choice == "SCISSORS" and user_choice == "PAPER":
     winner = "Computer"
 else:
     winner = "User"
-if winner == "TIE":
+if winner == "Tie":
     time.sleep(1.25)
     print("We both chose",computer_choice,"so its a draw.")
 else: 
