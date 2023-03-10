@@ -1,2 +1,5 @@
-answer = ("Hello"+"World")
-print(answer)
+gamestate1 =(
+' +----|\n'
+' O    |\n'
+'/|\   |\n'
+'/ \  ===')
