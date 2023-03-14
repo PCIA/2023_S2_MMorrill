@@ -80,6 +80,7 @@ while '_' in hidden_word and userWrong<6:
     elif guess not in word:
         userWrong = userWrong + 1
         checkgame = checkgame + 1
+        wrongchoices = wrongchoices + guess
         checkstate()
         if userWrong < 6:
             print(gamestate)
