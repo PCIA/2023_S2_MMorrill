@@ -90,7 +90,9 @@ if hidden_word == word:
     print(gamestate)
     time.sleep(2)
     print('Good job! Little Timmy lives to see another day')
+    print('The word was', word)
 else: 
     print (gamestate)
     time.sleep(1)
     print('You have failed. Little timmy is lost. You will carry this to your grave you monster.')
+    print('The word was', word)
