@@ -1,6 +1,4 @@
-text = """I really love apples. The thing is I also like oranges. But how do I know? Well I 
-eat them of course! So really the key is just trying new things and finding what you like and dont
-like!"""
+text = input('Please write the sentences you want sliced. ')
 def count_sentences(text):
     count = 0
     for char in (text):
@@ -34,9 +32,8 @@ def compute_readability (text):
     total_words = len(words)
     total_sentences = count_sentences(text)
     total_syllables = count_syllables(text)
-    print(total_words)
-    print(total_sentences)
-    print(total_syllables)
+    print('Your text has',total_sentences,'sentences,',total_words,'words, and',total_syllables,
+          'syllables.')
 compute_readability(text)
 
 
