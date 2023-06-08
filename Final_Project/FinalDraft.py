@@ -20,16 +20,15 @@ def alien_attack():
                    ['You hear a growl, its going to spit acid!', 'Fail! Acid sears your skin'],
                    ['The alien swings its claw toward you!', 'Fail! The claw slahes you']]
     alien_text_choice = random.randint(0,2)
-    time.sleep(1.5)
     print(alien_texts[alien_text_choice][0])
-    x = 0
-    while x == 0:
+    time.sleep(1)
+    while True:
         time.sleep(1)
         defender_choice = int(input('What do you do?\n(1)Dodge left\n(2)Dodge right\n(3)Jump back\n'))
         defender_choice = defender_choice - 1
         if defender_choice >= 0 and defender_choice <=2:
             hit = hit_check(attacker_choice, defender_choice)
-            x = 1
+            break
         else: 
             print('Invalid answer. Please enter number between 1 and 3')
     if hit == True:
@@ -47,7 +46,8 @@ def player_attack():
 
     while True:
         time.sleep(1)
-        attacker_choice = int(input('What do you do?\n(1)Swing left\n(2)Swing right\n(3)Swing forward\n'))
+        print('What do you do?')
+        attacker_choice = int(input('\n(1)Swing left\n(2)Swing right\n(3)Swing forward\n'))
         attacker_choice = attacker_choice - 1
         if attacker_choice >= 0 and attacker_choice <=2:
             hit = hit_check(attacker_choice, defender_choice)
@@ -78,7 +78,7 @@ while player_play == True:
                 player_play = False
                 break
             elif player_choice == 'Y':
-                looping1 = False
+                break
             else:
                 print('Invalid input')
     if player_play == False:
@@ -115,15 +115,18 @@ it's cause. Please proceed immediately.'''
     for i in entrytext2:
         time.sleep(0.05)
         print(i, end='', flush = True)
-    time.sleep(3)
 
-    print('''You begin descending into the lower levels of the ship. Lights flicker as you enter
-the corridor. You hear scratching. BOOM! The door slams behind you. A shape emerges from the darkness.
-An alien has infested the ship. You try to open the door but it's stuck. You have to kill it to
-save the ship. The alien growls as you pick up a broken pipe.''')
+    time.sleep(2)
 
+    print("\nYou begin descending into the lower levels of the ship.")
+    print("Lights flicker as you enter the corridor. You hear scratching.")
+    print("BOOM!")
+    print("The door slams behind you. You try to open it but it's stuck.")
+    print("A shape emerges from the darkness. An alien. It has infested the ship.")
+    print("You know in order to save the ship you have to kill it. The aliens growls")
+    print("You pick up a piece of broken pipe and preapre to fight it.")
+    turn = 0
     while player_health > 0:
-        turn = 0
         if turn == 0:
             player_attack()
             turn = 1
@@ -153,5 +156,6 @@ a medal for this.''')
             break
         else:
             print('Invalid response')
+    first_time = False
         
 print('Thank you for playing!')
