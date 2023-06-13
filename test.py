@@ -1,7 +1,5 @@
 import time
-def cycle_list(list):
-    for i in list:
-        time.sleep(1)
-        print(i)
-test = ['Run','Hide','Eua']
-cycle_list(test)
+t = input('')
+if t in ['1','2','3']:
+    t = int(t)-1
+    print(t)

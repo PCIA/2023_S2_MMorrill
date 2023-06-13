@@ -37,7 +37,7 @@ def alien_attack():
         list1 = ['What do you do?', '(1)Dodge left', '(2)Dodge right', '(3)Jump back']
         cycle_list(list1)
         defender_choice = input('')
-        if int(defender_choice) >= 1 and int(defender_choice) <=3:
+        if defender_choice in ['1','2','3']:
             defender_choice = int(defender_choice) - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
@@ -65,7 +65,7 @@ def player_attack():
         list2 = ['What do you do?', '(1)Swing left', '(2)Swing forward', '(3)Swing right']
         cycle_list(list2)
         attacker_choice = input('')
-        if int(attacker_choice) >= 1 and int(attacker_choice) <=3:
+        if attacker_choice in ['1','2','3']:
             attacker_choice = int(attacker_choice) - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
