@@ -85,9 +85,9 @@ def player_attack():
     
 first_time = True
 player_play = True
-EASY_DIFFICULTY_HEALTH = 100
-MEDIUM_DIFFICULTY_HEALTH = 50
-HARD_DIFFICULTY_HEALTH = 30
+EASY_DIFFICULTY_HEALTH = 50
+MEDIUM_DIFFICULTY_HEALTH = 30
+HARD_DIFFICULTY_HEALTH = 10
 
 while player_play:
 
@@ -107,7 +107,7 @@ while player_play:
         break
 
     player = entity('', 0)
-    alien = entity('alien', 50)
+    alien = entity('alien', 30)
 
     while True:
         time.sleep(1)
@@ -130,7 +130,7 @@ while player_play:
 atmospheric breach has been detected. You have been tasked with sealing the breach and investigating
 it's cause. Please proceed immediately.''')
 
-    time.sleep(2)
+    time.sleep(1.5)
 
     print("\nYou begin descending into the lower levels of the ship.")
     time.sleep(3)
