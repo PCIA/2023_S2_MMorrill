@@ -81,7 +81,7 @@ while player_play:
     if first_time:
         while True:
             print('Welcome to Alien Fight! Would you like to play?.')
-            player_choice = input('[Y]es or [N]o ')
+            player_choice = input('[Y]es or [N]o ').upper()[0]
             if player_choice == 'N':
                 player_play = False
                 break
@@ -98,7 +98,7 @@ while player_play:
 
     while True:
         time.sleep(0.25)
-        difficulty = input('Please select diffulculty. [H]ard, [M]edium, or [E]easy. ')
+        difficulty = input('Please select diffulculty. [H]ard, [M]edium, or [E]easy. ').upper()[0]
         if difficulty == 'H':
             player.health = HARD_DIFFICULTY_HEALTH
             break
@@ -138,14 +138,14 @@ it's cause. Please proceed immediately.'''
     print("You know in order to save the ship you have to kill it. The aliens growls")
     print("You pick up a piece of broken pipe and preapre to fight it.")
     turn = 0
-    while player_health > 0:
+    while player.health > 0:
         if turn == 0:
             player_attack()
             turn = 1
         elif turn == 1:
             alien_attack()
             turn = 0
-    if player_health <= 0:
+    if player.health <= 0:
         time.sleep(1)
         print('Defeat. The alien has killed you. Rest well marine.')
     else:
@@ -159,7 +159,7 @@ a medal for this.''')
         print(i, end='', flush = True)
 
     while True:
-        response = input('[Y]es or [N]o ')
+        response = input('[Y]es or [N]o ').upper()[0]
         if response == 'N':
             player_play = False
             break
