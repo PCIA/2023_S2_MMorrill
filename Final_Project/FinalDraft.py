@@ -1,7 +1,7 @@
 import random
 import time
 
-class user:
+class entity:
     def __init__(self, name, health):
         self.name = name
         self.health = health
@@ -64,13 +64,11 @@ def player_attack():
         print('Fail! The alien dodged the attack')
 
     
-alien_health = 50
-player_health = 0
 first_time = True
 player_play = True
 
-while player_play == True:
-    if first_time == True:
+while player_play:
+    if first_time:
         while True:
             print('Welcome to Alien Fight! Would you like to play?.')
             player_choice = input('[Y]es or [N]o ')
@@ -97,7 +95,6 @@ while player_play == True:
             break
         else:
             print('Invalid answer')
-    player = user('', player_health)
 
     entrytext1 = 'Welcome new employee of Starfax corp. Please enter your name: '
     entrytext2 = 'Welcome marine' + player.name + '''. There is a disturbance on sublevel 3. An
