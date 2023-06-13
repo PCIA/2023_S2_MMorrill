@@ -29,16 +29,16 @@ def alien_attack():
                    ['You hear a growl, its going to spit acid!', 'Fail! Acid sears your skin'],
                    ['The alien swings its claw toward you!', 'Fail! The claw slahes you']]
     alien_text_choice = random.randint(0,2)
-    time.sleep(2)
+    time.sleep(1.5)
     print(alien_texts[alien_text_choice][0])
 
     while True:
-        time.sleep(2)
+        time.sleep(1.5)
         list1 = ['What do you do?', '(1)Dodge left', '(2)Dodge right', '(3)Jump back']
         cycle_list(list1)
-        defender_choice = int(input(''))
-        if defender_choice >= 1 and defender_choice <=3:
-            defender_choice = defender_choice - 1
+        defender_choice = input('')
+        if int(defender_choice) >= 1 and int(defender_choice) <=3:
+            defender_choice = int(defender_choice) - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
         else: 
@@ -57,16 +57,16 @@ def player_attack():
     attacker_choice = 0
     defender_choice = random.randint(0,2)
 
-    time.sleep(2)
+    time.sleep(1.5)
     print('You have a chance to attack!')
 
     while True:
-        time.sleep(2)
+        time.sleep(1.5)
         list2 = ['What do you do?', '(1)Swing left', '(2)Swing forward', '(3)Swing right']
         cycle_list(list2)
-        attacker_choice = int(input(''))
-        if attacker_choice >= 1 and attacker_choice <=3:
-            attacker_choice = attacker_choice - 1
+        attacker_choice = input('')
+        if int(attacker_choice) >= 1 and int(attacker_choice) <=3:
+            attacker_choice = int(attacker_choice) - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
         else: 
