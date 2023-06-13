@@ -32,8 +32,8 @@ def alien_attack():
     while True:
         time.sleep(2)
         defender_choice = int(input('What do you do?\n(1)Dodge left\n(2)Dodge right\n(3)Jump back\n'))
-        defender_choice = defender_choice - 1
         if defender_choice >= 0 and defender_choice <=2:
+            defender_choice = defender_choice - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
         else: 
@@ -60,8 +60,8 @@ def player_attack():
         print('What do you do?')
         time.sleep(1)
         attacker_choice = int(input('\n(1)Swing left\n(2)Swing right\n(3)Swing forward\n'))
-        attacker_choice = attacker_choice - 1
         if attacker_choice >= 0 and attacker_choice <=2:
+            attacker_choice = attacker_choice - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
         else: 
@@ -105,7 +105,7 @@ while player_play:
     alien = entity('alien', 50)
 
     while True:
-        time.sleep(0.25)
+        time.sleep(1)
         difficulty = input('Please select diffulculty. [H]ard, [M]edium, or [E]easy. ').upper()[0]
         if difficulty == 'H':
             player.health = HARD_DIFFICULTY_HEALTH
@@ -121,7 +121,7 @@ while player_play:
 
     slow_text('Welcome new employee of Starfax corp. Please enter your name: ')
     player.name = input('')
-    slow_text('Welcome marine' + player.name + '''. There is a disturbance on sublevel 3. An
+    slow_text('Welcome marine ' + player.name + '''. There is a disturbance on sublevel 3. An
 atmospheric breach has been detected. You have been tasked with sealing the breach and investigating
 it's cause. Please proceed immediately.''')
 
@@ -139,7 +139,7 @@ it's cause. Please proceed immediately.''')
     time.sleep(3)
     print("You know in order to save the ship you have to kill it. The aliens growls")
     time.sleep(2)
-    print("You pick up a piece of broken pipe and preapre to fight it.")
+    print("You pick up a piece of broken pipe and prepare to fight it.")
 
     turn = 0
     while player.health > 0:
