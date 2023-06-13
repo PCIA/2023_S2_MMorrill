@@ -60,6 +60,7 @@ def player_attack():
             break
         else: 
             print('Invalid answer. Please enter number between 1 and 3')
+
     if hit == True:
         time.sleep(1)
         print('Success! You hit the alien. It howls in pain.')
@@ -111,32 +112,28 @@ while player_play:
         else:
             print('Invalid answer')
 
-    entrytext1 = 'Welcome new employee of Starfax corp. Please enter your name: '
-    entrytext2 = 'Welcome marine' + player.name + '''. There is a disturbance on sublevel 3. An
-atmospheric breach has been detected. You have been tasked with sealing the breach and investigating
-it's cause. Please proceed immediately.'''
-
-# The following code loops came from chatGPT after giving it the code and the prompt
-# 'Hey I have this code. I'm trying to print some text out by individally having the letters 
-# typed on screen, except it creates a new line for every letter and I don't want that.
-#  How do I fix it?'
-    for i in entrytext1:
-        time.sleep(0.05)
-        print(i, end='', flush = True)
+    slow_text('Welcome new employee of Starfax corp. Please enter your name: ')
     player.name = input('')
-    for i in entrytext2:
-        time.sleep(0.05)
-        print(i, end='', flush = True)
+    slow_text('Welcome marine' + player.name + '''. There is a disturbance on sublevel 3. An
+atmospheric breach has been detected. You have been tasked with sealing the breach and investigating
+it's cause. Please proceed immediately.''')
 
     time.sleep(2)
 
     print("\nYou begin descending into the lower levels of the ship.")
+    time.sleep(3)
     print("Lights flicker as you enter the corridor. You hear scratching.")
+    time.sleep(3)
     print("BOOM!")
+    time.sleep(1)
     print("The door slams behind you. You try to open it but it's stuck.")
+    time.sleep(3)
     print("A shape emerges from the darkness. An alien. It has infested the ship.")
+    time.sleep(3)
     print("You know in order to save the ship you have to kill it. The aliens growls")
+    time.sleep(2)
     print("You pick up a piece of broken pipe and preapre to fight it.")
+
     turn = 0
     while player.health > 0:
         if turn == 0:
@@ -152,11 +149,8 @@ it's cause. Please proceed immediately.'''
         time.sleep(1)
         print('''The alien gives a final roar before collapsing down. Well done marine, you'll get
 a medal for this.''')
-    closingtext1 = 'Would you like to try again?'
-
-    for i in closingtext1:
-        time.sleep (0.05)
-        print(i, end='', flush = True)
+        
+    slow_text('Would you like to try again?')
 
     while True:
         response = input('[Y]es or [N]o ').upper()[0]
@@ -164,10 +158,9 @@ a medal for this.''')
             player_play = False
             break
         elif response == 'Y':
-            player_play = True
             break
         else:
             print('Invalid response')
     first_time = False
         
-print('Thank you for playing!')
+slow_text('Thank you for playing!')
