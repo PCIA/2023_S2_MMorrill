@@ -11,6 +11,11 @@ def slow_text(text):
         time.sleep(0.05)
         print(i, end='', flush = True)
 
+def cycle_list(list):
+    for i in list:
+        time.sleep(1)
+        print(i)
+
 def hit_check(attacker_number, defender_number):
     if attacker_number == defender_number:
         return True
@@ -27,12 +32,12 @@ def alien_attack():
     time.sleep(2)
     print(alien_texts[alien_text_choice][0])
 
-    time.sleep(1)
-
     while True:
         time.sleep(2)
-        defender_choice = int(input('What do you do?\n(1)Dodge left\n(2)Dodge right\n(3)Jump back\n'))
-        if defender_choice >= 0 and defender_choice <=2:
+        list1 = ['What do you do?', '(1)Dodge left', '(2)Dodge right', '(3)Jump back']
+        cycle_list(list1)
+        defender_choice = int(input(''))
+        if defender_choice >= 1 and defender_choice <=3:
             defender_choice = defender_choice - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
@@ -57,10 +62,10 @@ def player_attack():
 
     while True:
         time.sleep(2)
-        print('What do you do?')
-        time.sleep(1)
-        attacker_choice = int(input('\n(1)Swing left\n(2)Swing right\n(3)Swing forward\n'))
-        if attacker_choice >= 0 and attacker_choice <=2:
+        list2 = ['What do you do?', '(1)Swing left', '(2)Swing forward', '(3)Swing right']
+        cycle_list(list2)
+        attacker_choice = int(input(''))
+        if attacker_choice >= 1 and attacker_choice <=3:
             attacker_choice = attacker_choice - 1
             hit = hit_check(attacker_choice, defender_choice)
             break
