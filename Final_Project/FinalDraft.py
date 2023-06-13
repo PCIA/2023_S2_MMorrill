@@ -24,12 +24,13 @@ def alien_attack():
                    ['You hear a growl, its going to spit acid!', 'Fail! Acid sears your skin'],
                    ['The alien swings its claw toward you!', 'Fail! The claw slahes you']]
     alien_text_choice = random.randint(0,2)
+    time.sleep(2)
     print(alien_texts[alien_text_choice][0])
 
     time.sleep(1)
 
     while True:
-        time.sleep(1)
+        time.sleep(2)
         defender_choice = int(input('What do you do?\n(1)Dodge left\n(2)Dodge right\n(3)Jump back\n'))
         defender_choice = defender_choice - 1
         if defender_choice >= 0 and defender_choice <=2:
@@ -38,21 +39,26 @@ def alien_attack():
         else: 
             print('Invalid answer. Please enter number between 1 and 3')
     if hit == True:
+        time.sleep(2)
         print(alien_texts[alien_text_choice][1])
         player.health = player.health - 10
         print('Your health is now',player.health)
     else:
+        time.sleep(2)
         print('Success! You dodged the attack')
 
 def player_attack():
 
     attacker_choice = 0
     defender_choice = random.randint(0,2)
+
+    time.sleep(2)
     print('You have a chance to attack!')
 
     while True:
-        time.sleep(1)
+        time.sleep(2)
         print('What do you do?')
+        time.sleep(1)
         attacker_choice = int(input('\n(1)Swing left\n(2)Swing right\n(3)Swing forward\n'))
         attacker_choice = attacker_choice - 1
         if attacker_choice >= 0 and attacker_choice <=2:
@@ -61,8 +67,9 @@ def player_attack():
         else: 
             print('Invalid answer. Please enter number between 1 and 3')
 
+    time.sleep(2)
+
     if hit == True:
-        time.sleep(1)
         print('Success! You hit the alien. It howls in pain.')
         alien.health = alien.health - 10
         time.sleep(1)
@@ -81,7 +88,7 @@ while player_play:
 
     if first_time:
         while True:
-            print('Welcome to Alien Fight! Would you like to play?.')
+            slow_text('Welcome to Alien Fight! Would you like to play?.')
             player_choice = input('[Y]es or [N]o ').upper()[0]
             if player_choice == 'N':
                 player_play = False
