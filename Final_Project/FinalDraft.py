@@ -6,6 +6,11 @@ class entity:
         self.name = name
         self.health = health
 
+def slow_text(text):
+    for i in text:
+        time.sleep(0.05)
+        print(i, end='', flush = True)
+
 def hit_check(attacker_number, defender_number):
     if attacker_number == defender_number:
         return True
@@ -13,7 +18,6 @@ def hit_check(attacker_number, defender_number):
         return False
 
 def alien_attack():
-    global player_health
     attacker_choice = random.randint(0,2)
     defender_choice = 0
     alien_texts = [['The alien roars and lunges toward you!', 'Fail! It bites into your flesh'],
@@ -21,7 +25,9 @@ def alien_attack():
                    ['The alien swings its claw toward you!', 'Fail! The claw slahes you']]
     alien_text_choice = random.randint(0,2)
     print(alien_texts[alien_text_choice][0])
+
     time.sleep(1)
+
     while True:
         time.sleep(1)
         defender_choice = int(input('What do you do?\n(1)Dodge left\n(2)Dodge right\n(3)Jump back\n'))
@@ -33,13 +39,13 @@ def alien_attack():
             print('Invalid answer. Please enter number between 1 and 3')
     if hit == True:
         print(alien_texts[alien_text_choice][1])
-        player_health = player_health - 20
-        print('Your health is now',player_health)
+        player.health = player.health - 10
+        print('Your health is now',player.health)
     else:
         print('Success! You dodged the attack')
 
 def player_attack():
-    global alien_health
+
     attacker_choice = 0
     defender_choice = random.randint(0,2)
     print('You have a chance to attack!')
@@ -57,17 +63,21 @@ def player_attack():
     if hit == True:
         time.sleep(1)
         print('Success! You hit the alien. It howls in pain.')
-        alien_health = alien_health - 20
+        alien.health = alien.health - 10
         time.sleep(1)
-        print('The alien now has a health of',alien_health)
+        print('The alien now has a health of',alien.health)
     else:
         print('Fail! The alien dodged the attack')
 
     
 first_time = True
 player_play = True
+EASY_DIFFICULTY_HEALTH = 100
+MEDIUM_DIFFICULTY_HEALTH = 50
+HARD_DIFFICULTY_HEALTH = 30
 
 while player_play:
+
     if first_time:
         while True:
             print('Welcome to Alien Fight! Would you like to play?.')
@@ -79,19 +89,24 @@ while player_play:
                 break
             else:
                 print('Invalid input')
+
     if player_play == False:
         break
+
+    player = entity('', 0)
+    alien = entity('alien', 50)
+
     while True:
         time.sleep(0.25)
         difficulty = input('Please select diffulculty. [H]ard, [M]edium, or [E]easy. ')
         if difficulty == 'H':
-            player_health = 25
+            player.health = HARD_DIFFICULTY_HEALTH
             break
         if difficulty == 'M':
-            player_health = 50
+            player.health = MEDIUM_DIFFICULTY_HEALTH
             break
         if difficulty =='E':
-            player_health = 100
+            player.health = EASY_DIFFICULTY_HEALTH
             break
         else:
             print('Invalid answer')
